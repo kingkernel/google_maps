@@ -1,25 +1,39 @@
 <?php
-
- class googlemaps{
+class googlemaps{
  /*
-data criação: 11/11/2017
+	Data criação: 		11/11/2017
+	última Alteração: 	12/11/2017
+	Autor: 				Daniel J. Santos
+	Nome Classe: 		googlemaps
+	versão: 			0.02
+
+-- ################################################################################################
+Atributos: 
+		key 			[private]		A key de usuário do google maps obrigatorio agora.
+		functionName 	[public]		O nome da função que iniciará o mapa .
+		idmap			[public] 		O id da div que conterá o mapa.
+		zoom 			[public]		O zoom do mapa.. padrão é 15
+		position 		[public] 		A posição inicial do centro do mapa. array com 2 
+										argumentos. "lat" e "lng" que são latitude e longitude
+		points 			[public] 		Array contendo os objetos que são os pontos no mapa. 
+-- ################################################################################################
  */
- 	private $key;						//sua key do google maps
- 	public $functionname;				// o nome da função
- 	public $idmap;						// o id da div que vai conter o mapa
- 	public $zoom;						// tamanho do zoom
- 	public $points = array();			// array com marcadores
- 	public $position = array();			// posição inicial do mapa
+ 	private $key;						// string
+ 	public $functionName;				// string
+ 	public $idmap;						// string
+ 	public $zoom;						// int
+ 	public $position = array();			// array
+ 	public $points = array();			// array
 
 
- 	public function __construct(){
+ 	public function __construct($this->key){
  		if(!isset($this->zoom)){$this->zoom=15;};
  	}
  	public function render(){
  		echo '<script src="https://maps.googleapis.com/maps/api/js?key='.$this->key.'&callback='.$this->functionname.'&language=PT-BR&region=BR" async defer></script>';
  	}
  	public function mountjs(){
- 		echo 'function '.$this->functionname.'(){var map = new google.maps.Map(document.getElementById(\''.$this->idmap.'\'), {zoom: '.$this->zoom.', center: {lat: '.$this->position["lat"].', lng: '.$this->position["lng"].'}});';
+ 		echo 'function '.$this->functionName.'(){var map = new google.maps.Map(document.getElementById(\''.$this->idmap.'\'), {zoom: '.$this->zoom.', center: {lat: '.$this->position["lat"].', lng: '.$this->position["lng"].'}});';
         foreach ($this->points as $key => $value) {
         	$value->render();
         };
