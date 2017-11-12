@@ -10,7 +10,7 @@ class googlemaps{
 -- ################################################################################################
 Atributos: 
 		key 			[private]		A key de usuário do google maps obrigatorio agora.
-		functionName 	[public]		O nome da função que iniciará o mapa .
+		functionName 		[public]		O nome da função que iniciará o mapa .
 		idmap			[public] 		O id da div que conterá o mapa.
 		zoom 			[public]		O zoom do mapa.. padrão é 15
 		position 		[public] 		A posição inicial do centro do mapa. array com 2 
@@ -18,10 +18,10 @@ Atributos:
 		points 			[public] 		Array contendo os objetos que são os pontos no mapa. 
 -- ################################################################################################
  */
- 	private $key;						// string
+ 	private $key;					// string
  	public $functionName;				// string
- 	public $idmap;						// string
- 	public $zoom;						// int
+ 	public $idmap;					// string
+ 	public $zoom;					// int
  	public $position = array();			// array
  	public $points = array();			// array
 
