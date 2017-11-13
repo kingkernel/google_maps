@@ -3,9 +3,9 @@ class googlemaps{
  /*
 	Data criação: 		11/11/2017
 	última Alteração: 	12/11/2017
-	Autor: 				Daniel J. Santos
+	Autor: 			Daniel J. Santos
 	Nome Classe: 		googlemaps
-	versão: 			0.02
+	versão: 		0.02
 
 -- ################################################################################################
 Atributos: 
