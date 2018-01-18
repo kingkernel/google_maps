@@ -30,7 +30,7 @@ Métodos:
  	public $points = array();			// array
 
 
- 	public function __construct($this->key){
+ 	public function __construct($key){
  		if(!isset($this->zoom)){$this->zoom=15;};
  	}
 /*
