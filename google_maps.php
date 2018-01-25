@@ -2,7 +2,7 @@
 class googlemaps{
  /*
 	Data criação: 		11/11/2017
-	última Alteração: 	12/11/2017
+	última Alteração: 	18/01/2018
 	Autor: 				Daniel J. Santos
 	Nome Classe: 		googlemaps
 	versão: 			0.02
@@ -22,16 +22,17 @@ Métodos:
 										renderizado o mapa na tela
 -- ################################################################################################
  */
- 	private $key;						// string
+ 	public $key;						// string
  	public $functionName;				// string
  	public $idmap;						// string
  	public $zoom;						// int
- 	public $position = array();			// array
- 	public $points = array();			// array
+ 	public $position = [];			// array
+ 	public $points = [];			// array
+ 	public $addcss = "html, body {height: 95%; margin: 0;padding: 0;}";
 
 
  	public function __construct($key){
- 		if(!isset($this->zoom)){$this->zoom=15;};
+ 		if(!isset($this->zoom)){$this->zoom=15;};$key=$this->key;
  	}
 /*
 -- ################################################################################################
@@ -43,7 +44,8 @@ Método: mountjs
         foreach ($this->points as $key => $value) {
         	$value->render();
         };
-        echo '};</script><script src="https://maps.googleapis.com/maps/api/js?key='.$this->key.'&callback='.$this->functionName.'&language=PT-BR&region=BR" async defer></script>';
+        echo '};</script><script src="https://maps.googleapis.com/maps/api/js?'.'sensor=false&callback=showmapa"></script>';
+        //key='.$this->key.'&callback='.$this->functionName.'&language=PT-BR&region=BR" async defer></script>';
  	}
  }
  // <-- fim da classe googlemaps -->
